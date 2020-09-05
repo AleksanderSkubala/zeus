@@ -1,37 +1,15 @@
 <template>
   <Layout>
-
-    <div class="posts">
-      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
-    </div>
-
+    <div v-html="$page.about.content"></div>
   </Layout>
 </template>
 
 <page-query>
-query {
-  posts: allPost(filter: { published: { eq: true }}) {
-    edges {
-      node {
-        id
-        title
-        date (format: "D. MMMM YYYY")
-        timeToRead
-        description
-        cover_image (width: 770, height: 380, blur: 10)
-        ...on Post {
-        id
-        title
-        path
-        }
-        path
-        tags {
-          id
-          title
-          path
-        }
-      }
-    }
+query About{
+  about: about(id: "21893d17fe66ade8bee9ccd1dc8cc553") {
+    id
+    title
+		content
   }
 }
 </page-query>

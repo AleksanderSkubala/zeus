@@ -21,10 +21,6 @@
       </div>
     </div>
 
-    <div class="post-comments">
-      <!-- Add comment widgets here -->
-    </div>
-
   </Layout>
 </template>
 
