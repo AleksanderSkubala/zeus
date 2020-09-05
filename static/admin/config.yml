@@ -23,7 +23,7 @@ collections:
       - {label: "Cover Image", name: "cover_image", widget: "image", required: false}
       - {label: "Description", name: "description", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - name: "postsHTGP" # Used in routes, e.g., /admin/collections/blog
+  - name: "postsHtgp" # Used in routes, e.g., /admin/collections/blog
     label: "Posts HTGP" # Used in the UI
     media_folder: '/static/images/uploads'
     public_folder: '../../static/images/uploads'

@@ -25,18 +25,15 @@
       <!-- Add comment widgets here -->
     </div>
 
-    <Author class="post-author" />
   </Layout>
 </template>
 
 <script>
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
-import Author from '~/components/Author.vue'
 
 export default {
   components: {
-    Author,
     PostMeta,
     PostTags
   },

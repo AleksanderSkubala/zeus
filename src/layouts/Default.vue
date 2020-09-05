@@ -2,13 +2,11 @@
   <div id="app">
 
     <header class="header">
-      <div class="header__left">
-        <Logo v-if="showLogo" />
-      </div>
-
-      <div class="header__right">
-        <ToggleTheme />
-      </div>
+      <g-link to="/">Strona Główna</g-link>
+      <ul>
+        <li><g-link to="/news" class="menuItem">Aktualności</g-link></li>
+        <li><g-link to="/htgp" class="menuItem">HTGP</g-link></li>
+      </ul>
     </header>
 
     <main class="main">
@@ -16,27 +14,12 @@
     </main>
 
     <footer class="footer">
-      <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}. </span>
-      <span class="footer__links">Powered by <a href="//www.suits.at"> SUITS </a></span>
+      <span class="footer__copyright">Copyright © 158 Poznańska Drużyna Starszoharcerska "Zeus" {{ new Date().getFullYear() }} </span>
+      <span class="footer__links">Strone wykonał <a href="//www.github.com/AleksanderSkubala" target="_blank">Aleksander Skubała</a></span>
     </footer>
 
   </div>
 </template>
-
-<script>
-import Logo from '~/components/Logo.vue'
-import ToggleTheme from '~/components/ToggleTheme.vue'
-
-export default {
-  props: {
-    showLogo: { default: true }
-  },
-  components: {
-    Logo,
-    ToggleTheme
-  }
-}
-</script>
 
 <style lang="scss">
 .header {
@@ -44,30 +27,48 @@ export default {
   justify-content: space-between;
   align-items: center;
   min-height: var(--header-height);
-  padding: 0 calc(var(--space) / 2);
-  top:0;
+  padding: 20px 25px;
+  font-family: 'Poppins', sans-serif;
+  font-size: calc(var(--base-font-size) - 2.5px);
+  top: 0;
   z-index: 10;
+  position: sticky;
 
-  &__left,
-  &__right {
-    display: flex;
-    align-items: center;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: -1;
+    opacity: .85;
   }
 
-  @media screen and (min-width: 1300px) {
-    //Make header sticky for large screens
-    position: sticky;
-    width: 100%;
+  > ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .menuItem {
+    text-decoration: none;
+    margin-left: 20px;
+    color: var(--title-color);
   }
 }
 
 .main {
   margin: 0 auto;
-  padding: 1.5vw 15px 0;
+  padding: 1.5vw 15px;
 }
 
 .footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: calc(var(--space) / 2);
