@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1>Chyba nie mamy tego czego szukasz. 🤔</h1>
+    <h3 class="title404">Chyba nie mamy tego czego szukasz. 🤔</h3>
   </Layout>
 </template>
 
@@ -11,3 +11,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.title404 {
+  text-align: center;
+  color: var(--body-color);
+}
+</style>

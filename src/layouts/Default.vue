@@ -15,7 +15,7 @@
 
     <footer class="footer">
       <span class="footer__copyright">Copyright © 158 Poznańska Drużyna Starszoharcerska "Zeus" {{ new Date().getFullYear() }} </span>
-      <span class="footer__links">Strone wykonał <a href="//www.github.com/AleksanderSkubala" target="_blank">Aleksander Skubała</a></span>
+      <span class="footer__links">Projekt i wykonanie: <a href="//www.github.com/AleksanderSkubala" target="_blank">Aleksander Skubała</a></span>
     </footer>
 
   </div>
@@ -28,11 +28,17 @@
   align-items: center;
   min-height: var(--header-height);
   padding: 20px 25px;
-  font-family: 'Poppins', sans-serif;
-  font-size: calc(var(--base-font-size) - 2.5px);
   top: 0;
   z-index: 10;
   position: sticky;
+
+  .menuItem {
+    text-decoration: none;
+    color: var(--body-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(var(--base-font-size) - 3px);
+    font-weight: bold;
+  }
 
   &::before {
     content: '';
@@ -60,11 +66,6 @@
     &:last-child {
       margin-left: 0;
     }
-  }
-
-  .menuItem {
-    text-decoration: none;
-    color: var(--title-color);
   }
 }
 
