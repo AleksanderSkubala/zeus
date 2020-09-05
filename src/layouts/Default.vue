@@ -2,7 +2,7 @@
   <div id="app">
 
     <header class="header">
-      <g-link to="/">Strona Główna</g-link>
+      <g-link to="/" class="menuItem">Strona Główna</g-link>
       <ul>
         <li><g-link to="/news" class="menuItem">Aktualności</g-link></li>
         <li><g-link to="/htgp" class="menuItem">HTGP</g-link></li>
@@ -52,11 +52,18 @@
     justify-content: center;
     align-items: center;
     margin-left: 0;
+
+    > li {
+      margin-left: 20px;
+    }
+
+    &:last-child {
+      margin-left: 0;
+    }
   }
 
   .menuItem {
     text-decoration: none;
-    margin-left: 20px;
     color: var(--title-color);
   }
 }
