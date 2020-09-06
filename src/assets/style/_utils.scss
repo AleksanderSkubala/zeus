@@ -2,6 +2,14 @@
 	text-align: center;
 }
 
+.text-justify {
+	text-align: justify;
+}
+
 .space-bottom {
 	margin-bottom: var(--space);
+}
+
+.space-around {
+	margin: var(--space);
 }
