@@ -11,7 +11,7 @@
 </template>
 
 <page-query>
-query Tag ($id: ID!) {
+query TagHtgp ($id: ID!) {
   tag (id: $id) {
     title
     belongsTo {

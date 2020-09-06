@@ -2,22 +2,22 @@
   <Layout>
     <div class="post-title">
       <h1 class="post-title__text">
-        {{ $page.post.title }}
+        {{ $page.postHtgp.title }}
       </h1>
 
-      <PostMeta :post="$page.post" />
+      <PostMeta :post="$page.postHtgp" />
 
     </div>
 
     <div class="post content-box">
       <div class="post__header">
-        <g-image alt="Cover image" v-if="$page.post.cover_image" :src="$page.post.cover_image" />
+        <g-image alt="Cover image" v-if="$page.postHtgp.cover_image" :src="$page.postHtgp.cover_image" />
       </div>
 
-      <div class="post__content" v-html="$page.post.content" />
+      <div class="post__content" v-html="$page.postHtgp.content" />
 
       <div class="post__footer">
-        <PostTags :post="$page.post" />
+        <PostTags :post="$page.postHtgp" />
       </div>
     </div>
 
@@ -35,11 +35,11 @@ export default {
   },
   metaInfo () {
     return {
-      title: this.$page.post.title,
+      title: this.$page.postHtgp.title,
       meta: [
         {
           name: 'description',
-          content: this.$page.post.description
+          content: this.$page.postHtgp.description
         }
       ]
     }
@@ -48,8 +48,8 @@ export default {
 </script>
 
 <page-query>
-query Post ($id: ID!) {
-  post: post (id: $id) {
+query PostHtgp ($id: ID!) {
+  postHtgp: postHtgp (id: $id) {
     title
     path
     date (format: "D/MM/YYYY")
@@ -61,7 +61,6 @@ query Post ($id: ID!) {
     }
     description
     content
-    cover_image (width: 860, blur: 10)
   }
 }
 </page-query>
