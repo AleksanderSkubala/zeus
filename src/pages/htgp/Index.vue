@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h3 class="text-center space-bottom">
+    <h3 class="text-center space-bottom heading">
       Harcerski Turniej Gier Planszowych
     </h3>
     <div class="text-justify space-around">
@@ -58,6 +58,8 @@ export default {
 </script>
 
 <style lang="scss">
-
+.heading {
+  margin-top: calc(var(--header-height) + 1.5em);
+}
 </style>
 

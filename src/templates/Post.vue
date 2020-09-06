@@ -68,6 +68,7 @@ query Post ($id: ID!) {
 
 <style lang="scss">
 .post-title {
+  margin-top: calc(var(--header-height) + 1.5em);
   padding: calc(var(--space) / 2) 0 calc(var(--space) / 2);
   text-align: center;
 }

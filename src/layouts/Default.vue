@@ -27,10 +27,11 @@
   justify-content: space-between;
   align-items: center;
   min-height: var(--header-height);
+  width: 100vw;
   padding: 20px 25px;
   top: 0;
   z-index: 9999;
-  position: sticky;
+  position: fixed;
 
   .menuItem {
     text-decoration: none;
@@ -71,7 +72,6 @@
 
 .main {
   margin: 0 auto;
-  padding: 1.5vw 0;
 }
 
 .footer {
