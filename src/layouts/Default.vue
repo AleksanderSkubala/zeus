@@ -29,7 +29,7 @@
   min-height: var(--header-height);
   padding: 20px 25px;
   top: 0;
-  z-index: 10;
+  z-index: 9999;
   position: sticky;
 
   .menuItem {
@@ -71,7 +71,7 @@
 
 .main {
   margin: 0 auto;
-  padding: 1.5vw 15px;
+  padding: 1.5vw 0;
 }
 
 .footer {
