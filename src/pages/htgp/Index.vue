@@ -3,7 +3,9 @@
     <h3 class="text-center space-bottom">
       Harcerski Turniej Gier Planszowych
     </h3>
-    <div class="text-justify space-around" v-html="$page.about.content"></div>
+    <div class="text-justify space-around">
+      <p>Harcerski Turniej Gier Planszowych to  miejsce gdzie możesz pograć w planszówki (i nie tylko 😊), nawiązać nowe znajomości i przede wszystkim <strong>dobrze się bawić</strong>. Jeżeli chcesz miło spędzić weekend, zrelaksować się i może nawet wrócić z jakąś nagrodą - zapisz się czym prędzej, bo ilość miejsc jest ograniczona. 😉</p>
+    </div>
 
     <div class="posts">
       <h5 class="text-center space-bottom" v-if="!$page.postsHtgp.edges">Jak widać świeci pustkami... Staramy się to zmienić, wróć za jakiś czas. 😉</h5>

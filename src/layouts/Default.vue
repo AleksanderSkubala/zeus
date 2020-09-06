@@ -15,7 +15,7 @@
 
     <footer class="footer">
       <span class="footer__copyright">Copyright © 158 Poznańska Drużyna Starszoharcerska "Zeus" {{ new Date().getFullYear() }} </span>
-      <span class="footer__links">Projekt i wykonanie: <a href="//www.github.com/AleksanderSkubala" target="_blank">Aleksander Skubała</a></span>
+      <span class="footer__links">Projekt i wykonanie: <a href="//www.github.com/AleksanderSkubala" target="_blank" rel="noopener">Aleksander Skubała</a></span>
     </footer>
 
   </div>

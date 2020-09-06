@@ -17,7 +17,7 @@ query TagHtgp ($id: ID!) {
     belongsTo {
       edges {
         node {
-          ...on Post {
+          ...on PostHtgp {
             title
             path
             date (format: "D/MM/YYYY")
