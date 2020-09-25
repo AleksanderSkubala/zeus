@@ -6,8 +6,17 @@
 </template>
 
 <script>
+import { gsap, CSSPlugin, ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(CSSPlugin, ScrollTrigger);
+
 export default {
   name: "WelcomeSection",
+  mounted() {
+    const wrapper = document.querySelector('.wrapper');
+    const heading = document.querySelector('.welcomeHeading');
+
+    gsap.fromTo(heading, {y: '+=100', opacity: 0}, {y: 0, opacity: 1, duration: 1, delay: 0.5, ease: 'easeInOut'});
+  },
 };
 </script>
 

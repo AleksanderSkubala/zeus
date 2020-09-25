@@ -23,15 +23,5 @@ export default {
     Joining,
     Socials
   },
-  mounted() {
-    const aos = document.querySelectorAll('.aos');
-
-    aos.forEach(section => {
-      gsap.fromTo(section.children, {y: '+=100', opacity: 0}, {y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: 'easeInOut', scrollTrigger: {
-      trigger: section,
-      start: 'top 20%',
-    }});
-    });
-  },
 }
 </script>
