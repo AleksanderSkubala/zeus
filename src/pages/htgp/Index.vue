@@ -24,6 +24,7 @@ query {
         date (format: "D/MM/YYYY")
         timeToRead
         description
+        cover_image (width: 770, height: 380, blur: 10)
         ...on PostHtgp {
           id
           title
@@ -37,9 +38,6 @@ query {
         }
       }
     }
-  }
-  about: about(id: "cd87383214cba0ae62c0f1224cd8348f") {
-		content
   }
 }
 </page-query>
