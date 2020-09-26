@@ -9,7 +9,7 @@ https://nostalgic-hypatia-a13d1e.netlify.app/
 - Markdown for content.
 - Tags support.
 - CSS variables, SCSS & BEM for styling.
-- 100, 100, 100, 100 score on Google Lighthouse.
+- 93, 81, 92, 91 score on Google Lighthouse.
 
 ## Used technology stack:
 - Gridsome framework
