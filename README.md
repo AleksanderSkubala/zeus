@@ -8,7 +8,7 @@ https://nostalgic-hypatia-a13d1e.netlify.app/
 - Simple design.
 - Markdown for content.
 - Tags support.
-- CSS variables, SCSS & BEM for styling.
+- CSS variables, SCSS for styling.
 - 93, 81, 92, 91 score on Google Lighthouse.
 
 ## Used technology stack:
