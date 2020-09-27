@@ -2,13 +2,11 @@
   <div id="app">
 
     <header class="header">
-      <div class="header__left">
-        <Logo v-if="showLogo" />
-      </div>
-
-      <div class="header__right">
-        <ToggleTheme />
-      </div>
+      <g-link to="/" class="menuItem">Strona Główna</g-link>
+      <ul>
+        <li><g-link to="/news" class="menuItem">Aktualności</g-link></li>
+        <li><g-link to="/htgp" class="menuItem">HTGP</g-link></li>
+      </ul>
     </header>
 
     <main class="main">
@@ -16,27 +14,12 @@
     </main>
 
     <footer class="footer">
-      <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}. </span>
-      <span class="footer__links">Powered by <a href="//www.suits.at"> SUITS </a></span>
+      <span class="footer__copyright">Copyright © 158 Poznańska Drużyna Starszoharcerska "Zeus" {{ new Date().getFullYear() }} </span>
+      <span class="footer__links">Projekt i wykonanie: <a href="//www.github.com/AleksanderSkubala" target="_blank" rel="noopener">Aleksander Skubała</a></span>
     </footer>
 
   </div>
 </template>
-
-<script>
-import Logo from '~/components/Logo.vue'
-import ToggleTheme from '~/components/ToggleTheme.vue'
-
-export default {
-  props: {
-    showLogo: { default: true }
-  },
-  components: {
-    Logo,
-    ToggleTheme
-  }
-}
-</script>
 
 <style lang="scss">
 .header {
@@ -44,30 +27,56 @@ export default {
   justify-content: space-between;
   align-items: center;
   min-height: var(--header-height);
-  padding: 0 calc(var(--space) / 2);
-  top:0;
-  z-index: 10;
+  width: 100vw;
+  padding: 20px 25px;
+  top: 0;
+  z-index: 9999;
+  position: fixed;
 
-  &__left,
-  &__right {
-    display: flex;
-    align-items: center;
+  .menuItem {
+    text-decoration: none;
+    color: var(--body-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(var(--base-font-size) - 3px);
+    font-weight: bold;
   }
 
-  @media screen and (min-width: 1300px) {
-    //Make header sticky for large screens
-    position: sticky;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: -1;
+    opacity: .85;
+  }
+
+  > ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+
+    > li {
+      margin-left: 20px;
+    }
+
+    &:last-child {
+      margin-left: 0;
+    }
   }
 }
 
 .main {
   margin: 0 auto;
-  padding: 1.5vw 15px 0;
 }
 
 .footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: calc(var(--space) / 2);

@@ -21,22 +21,15 @@
       </div>
     </div>
 
-    <div class="post-comments">
-      <!-- Add comment widgets here -->
-    </div>
-
-    <Author class="post-author" />
   </Layout>
 </template>
 
 <script>
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
-import Author from '~/components/Author.vue'
 
 export default {
   components: {
-    Author,
     PostMeta,
     PostTags
   },
@@ -59,7 +52,7 @@ query Post ($id: ID!) {
   post: post (id: $id) {
     title
     path
-    date (format: "D. MMMM YYYY")
+    date (format: "D/MM/YYYY")
     timeToRead
     tags {
       id
@@ -75,6 +68,7 @@ query Post ($id: ID!) {
 
 <style lang="scss">
 .post-title {
+  margin-top: calc(var(--header-height) + 1.5em);
   padding: calc(var(--space) / 2) 0 calc(var(--space) / 2);
   text-align: center;
 }

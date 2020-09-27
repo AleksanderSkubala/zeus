@@ -2,6 +2,23 @@
 	text-align: center;
 }
 
+.text-justify {
+	text-align: justify;
+}
+
 .space-bottom {
 	margin-bottom: var(--space);
+}
+
+.space-around {
+	margin: var(--space);
+}
+
+.posts {
+	margin-top: calc(var(--header-height) + 1.5em);
+	padding: 1.5vw 10px;
+}
+
+.tag-title {
+	margin-top: calc(var(--header-height) + 1.5em);
 }

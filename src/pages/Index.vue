@@ -1,55 +1,27 @@
 <template>
-  <Layout :show-logo="false">
-    <!-- Author intro -->
-    <Author :show-title="true" />
-
-    <!-- List posts -->
-    <div class="posts">
-      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
-    </div>
-
+  <Layout>
+    <WelcomeSection/>
+    <AboutUs/>
+    <Joining/>
+    <Socials/>
   </Layout>
 </template>
 
-<page-query>
-query {
-  posts: allPost(filter: { published: { eq: true }}) {
-    edges {
-      node {
-        id
-        title
-        date (format: "D. MMMM YYYY")
-        timeToRead
-        description
-        cover_image (width: 770, height: 380, blur: 10)
-        ...on Post {
-        id
-        title
-        path
-        }
-        path
-        tags {
-          id
-          title
-          path
-        }
-      }
-    }
-  }
-}
-</page-query>
-
 <script>
-import Author from '~/components/Author.vue'
-import PostCard from '~/components/PostCard.vue'
+import WelcomeSection from '~/components/WelcomeSection.vue';
+import AboutUs from '~/components/AboutUs.vue';
+import Joining from '~/components/Joining.vue';
+import Socials from '~/components/Socials.vue';
+
+import { gsap, CSSPlugin, ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(CSSPlugin, ScrollTrigger);
 
 export default {
   components: {
-    Author,
-    PostCard
+    WelcomeSection,
+    AboutUs,
+    Joining,
+    Socials
   },
-  metaInfo: {
-    title: 'Home'
-  }
 }
 </script>

@@ -10,12 +10,27 @@ module.exports = {
 
   templates: {
     Post: '/:title',
-    PostHTGP: '/htgp/:title',
+    PostHtgp: '/htgp/:title',
     Tag: '/tag/:id',
-    TagHTGP: '/htgp/tag/:id',
+    TagHtgp: '/htgp/tag/:id',
+  },
+
+  chainWebpack: config => {
+    const svgRule = config.module.rule('svg')
+    svgRule.uses.clear()
+    svgRule
+      .use('vue-svg-loader')
+      .loader('vue-svg-loader')
   },
 
   plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'About',
+        path: 'content/about/*.md',
+      }
+    },
     {
       // Create posts from markdown files
       use: '@gridsome/source-filesystem',
@@ -32,28 +47,18 @@ module.exports = {
       }
     },
     {
-      // Create posts from markdown files
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'PostHTGP',
+        typeName: 'PostHtgp',
         path: 'content/postsHTGP/*.md',
         refs: {
-          // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
           tags: {
-            typeName: 'TagHTGP',
+            typeName: 'TagHtgp',
             create: true
           }
         }
       }
     },
-    {
-      // Create posts from markdown files
-      use: '@gridsome/source-filesystem',
-      options: {
-        typeName: 'About',
-        path: 'content/about/*.md',
-      }
-    }
   ],
 
   transformers: {

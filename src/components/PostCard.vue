@@ -33,6 +33,10 @@ export default {
   margin-bottom: var(--space);
   position: relative;
 
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   &__header {
     margin-left: calc(var(--space) * -1);
     margin-right: calc(var(--space) * -1);
